@@ -7,4 +7,4 @@ The repository contains the following files (more description is contained withi
 
 - bielliptic_models.m provides code for computing suitable models for X_0(N) and checking nonsingularity,
 - bielliptic_sieve.m contains an implementation of the Mordell–Weil sieve used,
-- bielliptic_sieve_output.txt contains the output of the bielliptic_sieve.m file
+- bielliptic_sieve_output.txt contains the output of the bielliptic_sieve.m file.
