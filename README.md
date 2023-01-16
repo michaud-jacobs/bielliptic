@@ -1,7 +1,7 @@
 # bielliptic
 Code to accompany the paper "Computing points on bielliptic modular curves over fixed quadratic fields" by Philippe Michaud-Jacobs.
 
-The paper is available on arXiv here: https://arxiv.org/abs/.
+The paper is available on arXiv here: (link here once available).
 
 The repository contains the following files (more description is contained within each file):
 
