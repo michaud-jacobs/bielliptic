@@ -5198,6 +5198,6 @@ Expected, since it should fail
 ++++++++++++++++++++++++++++++++++++++++++++++++
 Maximum l used in sieve was l = 11
 We verify nonsingularity for l in:
- [ 11, 3, 5, 7 ]
+ { 3, 5, 7, 11, 47 }
 {}
 { -43, -11, -7, -1 }
