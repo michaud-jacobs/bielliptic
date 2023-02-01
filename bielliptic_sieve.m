@@ -291,10 +291,14 @@ sieve := function(N: check_bad_d := false, VerboseLevel := 0, range_d := [-100..
         end for; // end of d loop
     end for; // end of n_range loop
     if VerboseLevel ge 1 then
-        print "Maximum l used in sieve was l =", max_l;
+        print "Maximum l used in sieve was l =", max_l; // (not including any ramifed primes used)
     end if;
     // We now verify that the curve X_0(N) is indeed nonsingular at each prime l we used in the sieve
-    primes_to_check := [l : l in ls | l le max_l + 1];
+    // We include all primes that divide elements of range_d to ensure any ramified primes that were used are checked too
+    primes_to_check := {l : l in ls | l le max_l + 1};
+    ds_used := [d : d in range_d | d ne 0 and d ne 1 and IsSquarefree(d)];
+    extra_to_check := {l : l in &join{Set(PrimeFactors(d)) : d in ds_used} | IsZero((2*N) mod l) eq false};
+    primes_to_check := primes_to_check join extra_to_check;
     if VerboseLevel ge 3 then
         print "We verify nonsingularity for l in:\n", primes_to_check;
     end if;
