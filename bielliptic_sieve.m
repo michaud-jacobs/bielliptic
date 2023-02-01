@@ -87,7 +87,7 @@ sieve := function(N: check_bad_d := false, VerboseLevel := 0, range_d := [-100..
        print "++++++++++++++++++++++++";
     end if;
 
-    max_l := ls[1]; // We will record the maximum value of l used in sieve
+    max_l := 0; // We will record the maximum value of l used in sieve (may not include some ramified primes)
 
     failed_d := {};
     KnownBad := {};
@@ -291,7 +291,7 @@ sieve := function(N: check_bad_d := false, VerboseLevel := 0, range_d := [-100..
         end for; // end of d loop
     end for; // end of n_range loop
     if VerboseLevel ge 1 then
-        print "Maximum l used in sieve was l =", max_l; // (not including any ramifed primes used)
+        print "Maximum l used in sieve was l =", max_l; // (potentially not including certain ramified primes)
     end if;
     // We now verify that the curve X_0(N) is indeed nonsingular at each prime l we used in the sieve
     // We include all primes that divide elements of range_d to ensure any ramified primes that were used are checked too
